@@ -1,6 +1,9 @@
 import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import posts from '../types/posts'
+
+// Setup firebase
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAJ8hGRPPiylftlztVhCYvJZ0x9wbYHJqs',
@@ -10,9 +13,15 @@ const firebaseConfig = {
   messagingSenderId: '937627292286',
   appId: '1:937627292286:web:022109205c845092e87e2f',
 }
+const app = initializeApp(firebaseConfig)
 
-const firebase_app = initializeApp(firebaseConfig)
-export const db = getFirestore(firebase_app)
+// Setup firebase auth
+
+export const auth = getAuth(app)
+
+// setup firebase store
+
+export const db = getFirestore(app)
 
 export async function getPosts({ queryKey }): Promise<posts[]> {
   const postsCol = collection(db, 'posts')

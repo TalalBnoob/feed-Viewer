@@ -1,5 +1,5 @@
-import post from '../../types/posts'
-import { getPosts, db } from '../../util/firebase'
+import post from '../types/posts'
+import { getPosts, db } from '../util/firebase'
 import Post from './Post'
 import { useQuery } from '@tanstack/react-query'
 

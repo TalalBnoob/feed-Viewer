@@ -1,5 +1,5 @@
 import { Timestamp } from 'firebase/firestore'
-import { getDurationFromNow } from '../../util/postsDate'
+import { getDurationFromNow } from '../util/postsDate'
 
 interface PostTypes {
   username: string
